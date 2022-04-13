@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-do List</title>
+    <link rel="stylesheet" href="./assets/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Beki's To-do List</h1>
+    </header>
+    <form>
+      <input type="text" class="todo-input" />
+      <button class="todo-button" type="submit">
+        <i class="btn btn-plus">
+          <svg height="20" width="20">
+            <line x1="2" y1="10" x2="18" y2="10" style="stroke:rgb(255, 230, 230);stroke-width:4" />
+            <line x1="10" y1="2" x2="10" y2="18" style="stroke:rgb(255, 230, 230);stroke-width:4" />
+          </svg>
+        </i>
+      </button>
+      <div class="select">
+        <select name="todos" class="filter-todo">
+          <option value="all">All</option>
+          <option value="completed">Completed</option>
+          <option value="uncompleted">Uncompleted</option>
+        </select>
+      </div>
+    </form>
+    <div class="todo-container">
+      <ul class="todo-list">        
+      </ul>
+    </div>
+
+    <script src="./assets/app.js"></script>
+  </body>
+</html>

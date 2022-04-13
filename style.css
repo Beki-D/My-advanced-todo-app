@@ -1,0 +1,167 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(0deg, rgb(1, 34, 34) 0%, #1f826e 100%);
+  color: rgb(58, 48, 35);
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+}
+
+header, form {
+  background-color: darkslategrey;
+  min-height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  font-size: 1.5rem;
+  color: rgb(250, 253, 253);
+}
+
+form {
+  border-radius: 0 0 50px 0;
+}
+
+form input, form button {
+  padding: 0.3rem;
+  font-size: 2rem;
+  border: none;
+  background: #ffefeb;
+}
+
+form button {
+  background: #2fa99a;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+form button:hover {
+  background: rgba(0, 255, 0, 0.767);
+}
+
+.todo-list {
+  min-width: 30%;
+  list-style: none;
+}
+
+.todo {
+  margin: 5vh 10vw;
+  background: #ffefeb;
+  font-size: 1.3rem;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;/*allows items to remian original size n not be stretched */
+  transition: all 0.5s ease;
+}
+
+.todo li{
+  flex: 1;/*pushes all buttons to the right end*/
+}
+
+.trash-btn, .complete-btn{
+  background: #c7421d;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.complete-btn {
+  background: #2fa99a;;
+}
+
+/*Makes icons pop on hover*/
+.todo > button:hover svg{
+  transform: rotateZ(-8deg) scale(1.5);
+  transition: 1s;
+}
+
+/*Some more styling for input field*/
+input:focus {
+  border: 3px darkcyan solid;
+  box-shadow: 0 1px 4px 0 rgba(12, 12, 13, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.15);
+}
+
+.todo-item {
+  padding: 0rem 0.5rem;
+}
+
+.btn-trash, .btn-check{
+  pointer-events: none;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #2fa99a;
+  opacity: 0.5;
+}
+
+.fall {
+  transform: translateY(2rem) rotateZ(20deg);
+  opacity: 0;
+}
+
+/*Remove default styling*/
+select {
+  appearance: none;
+  border: none;
+  outline: none;
+  padding: 0.5rem;
+}
+
+.select {
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+select {
+  color: #2fa99a;
+  width: 7.5rem;
+  cursor: pointer;
+}
+
+.select::after {
+  content: "\25BC";
+  position: absolute;
+  background:#3b9485;
+  top: 0;
+  right: 0;
+  padding: 7px 3px 0;
+  height: 2rem;
+  pointer-events: none;
+  color: #ffefeb;
+}
+
+.select:hover::after {
+  background: #ffefeb;
+  color: #2fa99a;
+}
+
+/*
+* Making it responsive
+*/
+@media screen and (max-width: 650px){
+  form input, form button {
+    padding: 0.2rem;
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 500px){
+  form input {
+    width: 55vw;
+  }
+/*  form {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+*/
+}
